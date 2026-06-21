@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aparajit Lal Kumar TJ - Resume</title>
+    <style>
+        :root {
+            /* Material 3 Color Palette Tokens */
+            --md-sys-color-primary: #1A365D;       /* Deep Sapphire Blue */
+            --md-sys-color-secondary: #2B6CB0;     /* Soft Accent Teal */
+            --md-sys-color-background: #F7FAFC;    /* Clean Page Background */
+            --md-sys-color-surface: #FFFFFF;       /* Card Containers */
+            --md-sys-color-on-surface: #1A202C;    /* Body Charcoal Text */
+            --md-sys-color-outline: #E2E8F0;       /* Divider / Border Accent */
+            --md-sys-color-surface-variant: #F0F4F8; /* Soft Background Highlights */
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--md-sys-color-background);
+            color: var(--md-sys-color-on-surface);
+            line-height: 1.6;
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        .resume-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--md-sys-color-surface);
+            padding: 50px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(26, 54, 93, 0.05);
+            border: 1px solid var(--md-sys-color-outline);
+        }
+
+        /* --- HEADER SECTION --- */
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            color: var(--md-sys-color-primary);
+            margin: 0 0 5px 0;
+            letter-spacing: -0.5px;
+        }
+
+        header .title {
+            font-size: 1.25rem;
+            color: var(--md-sys-color-secondary);
+            font-weight: 600;
+            margin: 0 0 15px 0;
+        }
+
+        header .contact-info {
+            font-size: 0.95rem;
+            color: #4A5568;
+        }
+
+        /* --- SECTION HEADINGS --- */
+        h2.section-title {
+            font-size: 1.4rem;
+            color: var(--md-sys-color-primary);
+            text-transform: uppercase;
+            border-bottom: 2px solid var(--md-sys-color-primary);
+            padding-bottom: 6px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+        }
+
+        p.summary-text {
+            font-size: 1.05rem;
+            text-align: justify;
+        }
+
+        /* --- TECHNICAL SKILLS MATRIX --- */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+
+        .skills-row {
+            display: flex;
+            border: 1px solid var(--md-sys-color-outline);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .skills-cat {
+            width: 25%;
+            background-color: var(--md-sys-color-surface-variant);
+            padding: 12px;
+            font-weight: 700;
+            color: var(--md-sys-color-primary);
+            border-right: 1px solid var(--md-sys-color-outline);
+            display: flex;
+            align-items: center;
+        }
+
+        .skills-val {
+            width: 75%;
+            padding: 12px;
+            background-color: var(--md-sys-color-surface);
+        }
+
+        /* --- TIMELINE / WORK BLOCK --- */
+        .company-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 5px;
+        }
+
+        .company-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--md-sys-color-primary);
+        }
+
+        .timeline-date {
+            font-weight: 600;
+            color: #718096;
+        }
+
+        .role-title {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: var(--md-sys-color-secondary);
+            margin-bottom: 20px;
+        }
+
+        /* --- PROJECT BLOCKS (COMPACT MATRIX RESTYLE) --- */
+        .project-card {
+            background-color: var(--md-sys-color-surface);
+            border: 1px solid var(--md-sys-color-outline);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+        }
+
+        .project-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--md-sys-color-primary);
+            margin: 0 0 12px 0;
+            background-color: var(--md-sys-color-surface-variant);
+            padding: 8px 16px;
+            border-radius: 6px;
+            border-left: 4px solid var(--md-sys-color-secondary);
+        }
+
+        .project-meta {
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+            color: #4A5568;
+        }
+
+        .project-meta strong {
+            color: var(--md-sys-color-secondary);
+        }
+
+        .project-card ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        .project-card li {
+            margin-bottom: 8px;
+        }
+
+        /* --- EDUCATION TABLE --- */
+        table.edu-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        table.edu-table th {
+            background-color: var(--md-sys-color-primary);
+            color: #ffffff;
+            font-weight: 600;
+            text-align: left;
+            padding: 12px;
+        }
+
+        table.edu-table td {
+            padding: 12px;
+            border-bottom: 1px solid var(--md-sys-color-outline);
+        }
+
+        table.edu-table tr:nth-child(even) {
+            background-color: var(--md-sys-color-surface-variant);
+        }
+
+        /* --- LIST METADATA --- */
+        ul.bullet-list {
+            padding-left: 20px;
+        }
+
+        ul.bullet-list li {
+            margin-bottom: 8px;
+        }
+
+        /* Responsive scaling */
+        @media (max-width: 768px) {
+            .resume-container { padding: 25px; }
+            .skills-row { flex-direction: column; }
+            .skills-cat, .skills-val { width: 100%; border-right: none; }
+            .skills-cat { border-bottom: 1px solid var(--md-sys-color-outline); }
+            .company-header { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="resume-container">
+    <header>
+        <h1>APARAJIT LAL KUMAR TJ</h1>
+        <div class="title">Senior Staff Data Engineer & Lead Data Architect</div>
+        <div class="contact-info">
+            Bengaluru, Karnataka, India &nbsp;|&nbsp; +91-9600779002 &nbsp;|&nbsp; aparajitlal.kumar@gmail.com
+        </div>
+    </header>
+
+    <h2 class="section-title">Professional Summary</h2>
+    <p class="summary-text">
+        Highly accomplished <strong>Senior Staff Data Engineer & Data Architect</strong> with over <strong>11 years of extensive experience</strong> driving large-scale distributed systems design, major cloud migrations, and critical data architecture frameworks within the high-visibility fintech ecosystem at <strong>Visa Inc.</strong> Expert in migrating petabyte-scale core financial data assets (Authorization and Clearing & Settlement datasets) to modern cloud topologies and executing complex, multi-tiered big data infrastructure lifecycles (Tusker upgrades). Proven track record of architecting autonomous agentic evaluation frameworks, leading cross-border sovereign data residency localizations, and clearing stringent technical regulatory audits (RBI). Recognized as an organizational Star Performer and multi-time Corporate Hackathon Winner, adept at translating complex multi-system product roadmaps into resilient, highly scalable cloud and distributed computing topologies engineered for MAANG-tier scale[cite: 4].
+    </p>
+
+    <h2 class="section-title">Core Technical Expertise</h2>
+    <div class="skills-grid">
+        <div class="skills-row">
+            <div class="skills-cat">Programming Languages</div>
+            <div class="skills-val">Python, Scala, Java, SQL, Bash Scripting, Groovy[cite: 4]</div>
+        </div>
+        <div class="skills-row">
+            <div class="skills-cat">Cloud & Migration</div>
+            <div class="skills-val">Cloud Data Asset Migration, IAM Configuration, Service Account Governance, Secure Multi-Region Infrastructure[cite: 4]</div>
+        </div>
+        <div class="skills-row">
+            <div class="skills-cat">Distributed Systems & ETL</div>
+            <div class="skills-val">Apache Spark (Core/SQL/Streaming), Hadoop Ecosystem (HDFS, YARN), Tusker Infrastructure, Ab-Initio, Apache Kafka, Apache Airflow, Sqoop, MapReduce, Enterprise Data Lake (EDL), Operational Data Store (ODS)[cite: 4]</div>
+        </div>
+        <div class="skills-row">
+            <div class="skills-cat">Databases & Storage</div>
+            <div class="skills-val">DB2, Hive, HBase, Exadata, Relational & NoSQL Database Modeling, Parquet, Avro, Sequence Files[cite: 4]</div>
+        </div>
+        <div class="skills-row">
+            <div class="skills-cat">DevOps & Infrastructure</div>
+            <div class="skills-val">Jenkins CI/CD, Grid Node Migration, Zero-Downtime Infrastructure Lifecycles, Big Data Ecosystem Upgrades (Major/Minor)[cite: 4]</div>
+        </div>
+        <div class="skills-row">
+            <div class="skills-cat">Architecture & Domains</div>
+            <div class="skills-val">Fintech Core Authorization, Clearing & Settlement (CS), Sovereign Data Residency Localization, Data Privacy & De-identification, Agentic LLM Testing Frameworks, Technical Compliance Audits (RBI)[cite: 4]</div>
+        </div>
+    </div>
+
+    <h2 class="section-title">Professional Experience</h2>
+    <div class="company-header">
+        <div class="company-name">VISA INC.</div>
+        <div class="timeline-date">June 2015 – Present</div>
+    </div>
+    <div class="role-title">Senior Staff Data Engineer & Lead Data Architect</div>
+
+    <!-- 12 PROJECT BLOCKS WITH TITLE AT THE TOP -->
+    
+    <div class="project-card">
+        <div class="project-name">Enterprise Cloud Migration for Core Data Assets</div>
+        <div class="project-meta"><strong>Tech Stack:</strong> Cloud Migration Frameworks, IAM, Service Account Governance, Data Integrity Protocol[cite: 4]</div>
+        <ul>
+            <li><strong>Led the end-to-end cloud migration strategy</strong> for mission-critical core data assets, including global <strong>Authorization (Auth)</strong> and <strong>Clearing & Settlement (CS)</strong> datasets[cite: 4].</li>
+            <li><strong>Architected schema mappings and secure transmission layouts</strong> to guarantee <strong>100% data integrity</strong> and zero transaction degradation during hot migrations[cite: 4].</li>
+            <li><strong>Established rigorous cloud security baselines</strong>, configuring fine-grained service account boundaries, access controls, and encryption-at-rest protocols for high-criticality financial payloads[cite: 4].</li>
+        </ul>
+    </div>
+
+    <div class="project-card">
+        <div class="project-name">Tusker Infrastructure Modernization & Ecosystem Lifecycle</div>
+        <div class="project-meta"><strong>Tech Stack:</strong> Tusker Migration Framework, Hadoop Major/Minor Upgrades, Apache Kafka Upgrades, Node Migration[cite: 4]</div>
+        <ul>
+            <li><strong>Spearheaded the complex Tusker migration initiative</strong>, managing both <strong>major and minor upgrades</strong> across the entire production big data ecosystem[cite: 4].</li>
+            <li><strong>Orchestrated large-scale grid Node Migrations</strong> and software version bumps with <strong>zero operational downtime</strong>, ensuring continuous real-time transaction processing[cite: 4].</li>
+            <li><strong>Automated validation matrices</strong> to run parallel cluster comparisons, eliminating regression risks and optimizing cluster compute/storage resource configurations[cite: 4].</li>
+        </ul>
+    </div>
+
+    <div class="project-card">
+        <div class="project-name">Business Release Data Architect (Authorization Domain)</div>
+        <div class="project-meta"><strong>Tech Stack:</strong> Distributed Data Modeling, Schema Registry, Backward Compatibility Validation, High-Availability Topology[cite: 4]</div>
+        <ul>
+            <li><strong>Served as the primary Lead Data Architect</strong> evaluating, signing off, and governing core data contracts across all global feature releases within the Authorization Domain[cite: 4].</li>
+            <li><strong>Enforced rigid structural standards</strong> ensuring <strong>99.999% system availability</strong>, perfect backward compatibility, and optimized network serialization layout constraints[cite: 4].</li>
+        </ul>
+    </div>
+
+    <div class="project-card">
+        <div class="project-name">DaaS Agentic Verse Framework</div>
+        <div class="project-meta"><strong>Tech Stack:</strong> Agentic AI Frameworks, Automated Integration Testing, Autonomous Change Management, Data Lineage Tracking[cite: 4]</div>
+        <ul>
+            <li><strong>Conceptualized, designed, and deployed an autonomous testing ecosystem</strong> that completely automates complex integration test validation pipelines[cite: 4].</li>
+            <li><strong>Engineered a metadata-driven backend lineage tracker</strong> to map end-to-end data dependencies across systems, <strong>compressing multi-system verification cycles from days to minutes</strong>[cite: 4].</li>
+        </ul>
+    </div>
+
+    <div class="project-card">
+        <div class="project-name">Sovereign Regional Data Localization</div>
+        <div class="project-meta"><strong>Tech Stack:</strong> India Localization Engines, Kazakhstan Localization Systems, Geo-Fencing Data Architectures, Real-time Topology Routing[cite: 4]</div>
+        <ul>
+            <li><strong>Architected and executed dedicated data processing nodes</strong> to isolate, clean, and store critical payment records locally for <strong>India Localization</strong> and <strong>Kazakhstan Localization</strong> mandates[cite: 4].</li>
+            <li><strong>Optimized processing topologies</strong> to ensure full geographic regulatory compliance <strong>without injecting lag</strong> into real-time global authorization networks[cite: 4].</li>
+        </ul>
+    </div>
+
+    <div class="project-card">
+        <div class="project-name">RBI Technical Compliance Audit Strategy</div>
+        <div class="project-meta"><strong>Tech Stack:</strong> Data Governance, Regulatory Compliance Auditing, Financial System Controls, End-to-End Lineage Visualizers[cite: 4]</div>
+        <ul>
+            <li><strong>Acted as the chief engineering authority for the Reserve Bank of India (RBI) technology audit</strong>, documenting rigorous compliance controls across core payment lifecycles[cite: 4].</li>
+            <li><strong>Generated immutable data flow architectures and lineage evidence</strong> confirming absolute compliance with national localized data storage directives[cite: 4].</li>
+        </ul>
+    </div>
+
+    <div class="project-card">
+        <div class="project-name">High-Velocity Real-time Pipelines & Data Privacy</div>
+        <div class="project-meta"><strong>Tech Stack:</strong> Apache Kafka, Real-time Ingestion Topologies, De-identification Engine, Payload Masking[cite: 4]</div>
+        <ul>
+            <li><strong>Designed high-velocity streaming pipelines using Kafka</strong> to efficiently consume and manage core real-time authorization event networks[cite: 4].</li>
+            <li><strong>Developed and embedded a high-performance De-identification Project engine</strong> at the collection perimeter to obscure sensitive attributes before persistent storage[cite: 4].</li>
+        </ul>
+    </div>
+
+    <div class="project-card">
+        <div class="project-name">Business Release Automation Infrastructure</div>
+        <div class="project-meta"><strong>Tech Stack:</strong> Release Orchestration Engines, Jenkins CI/CD, Scripted Validation Modules, Deployment Automation[cite: 4]</div>
+        <ul>
+            <li><strong>Engineered end-to-end automated deployment architectures</strong>, transitioning manual validation checkpoints into fully scripted pipelines[cite: 4].</li>
+            <li><strong>Dramatically reduced release execution windows</strong> and eliminated human deployment risks across business release cycles[cite: 4].</li>
+        </ul>
+    </div>
+
+    <div class="project-card">
+        <div class="project-name">Data Mart & Operational Data Store (ODS) Infrastructure</div>
+        <div class="project-meta"><strong>Tech Stack:</strong> Apache Spark, Scala, Python, DB2, Hadoop HDFS, Parquet, Avro, Sequence Files[cite: 4]</div>
+        <ul>
+            <li><strong>Pioneered the creation of a massive corporate Data Lake</strong> across distributed Hadoop clusters and enterprise warehouses to support predictive analytics and customer loyalty platforms[cite: 1, 4].</li>
+            <li><strong>Formulated efficient data serialization structures</strong> utilizing Parquet, Avro, and Sequence files to minimize cluster I/O bottlenecks[cite: 1, 4].</li>
+        </ul>
+    </div>
+
+    <div class="project-card">
+        <div class="project-name">Enterprise Data Warehouse Modernization</div>
+        <div class="project-meta"><strong>Tech Stack:</strong> Hive, Java-MapReduce, Apache Pig, Ab-Initio, DB2 Schema Modeling, Apache Airflow[cite: 4]</div>
+        <ul>
+            <li><strong>Decomposed compute-intensive Ab-Initio mappings</strong> and rewrote them into open-source distributed frameworks (Java-MR/Hive/Pig) to <strong>eliminate high software licensing costs</strong>[cite: 1, 4].</li>
+            <li><strong>Constructed aggregated reporting views in Hive</strong> to accelerate downstream business integration and data analytics queries on petabyte-scale records[cite: 1, 4].</li>
+        </ul>
+    </div>
+
+    <div class="project-card">
+        <div class="project-name">Unified Ingestion Framework</div>
+        <div class="project-meta"><strong>Tech Stack:</strong> Sqoop, Exadata OraLoader, DB2 Utilities, HDFS DistCp, Metadata Ingestion Pipelines[cite: 4]</div>
+        <ul>
+            <li><strong>Designed a highly reusable, generic data movement framework</strong> utilizing native utilities (Exadata OraLoader, Sqoop, DistCp) to fluidly sync information between relational and Hadoop environments[cite: 1, 4].</li>
+        </ul>
+    </div>
+
+    <div class="project-card">
+        <div class="project-name">Automated Scheduler Reporting Microservice</div>
+        <div class="project-meta"><strong>Tech Stack:</strong> REST APIs, ServiceNow API Integration, Alerting Systems, Spark Job Analytics[cite: 4]</div>
+        <ul>
+            <li><strong>Built an automated monitoring microservice leveraging REST APIs</strong> to analyze runtime parameters of big data jobs, creating instant alert notifications and incident tickets in ServiceNow[cite: 1, 4].</li>
+        </ul>
+    </div>
+
+    <h2 class="section-title">Education</h2>
+    <table class="edu-table">
+        <thead>
+            <tr>
+                <th>Degree</th>
+                <th>Specialization</th>
+                <th>Institution & University</th>
+                <th>Year</th>
+                <th>Result</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>M.Tech</strong></td>
+                <td>Software Systems – Data Analytics</td>
+                <td>BITS Pilani, Rajasthan (WILP Program)</td>
+                <td>2016–18</td>
+                <td><strong>7.8 CGPA</strong>[cite: 1, 4]</td>
+            </tr>
+            <tr>
+                <td><strong>B.E.</strong></td>
+                <td>Computer Science and Engineering</td>
+                <td>Mepco Schlenk Engineering College, Sivakasi (Anna Univ)</td>
+                <td>2011–15</td>
+                <td><strong>7.75 CGPA</strong>[cite: 1, 4]</td>
+            </tr>
+            <tr>
+                <td><strong>H.S.C.</strong></td>
+                <td>Computer Science</td>
+                <td>T.V.S. Matric Higher Secondary School, Madurai (State Board)</td>
+                <td>2010–11</td>
+                <td><strong>96.66%</strong>[cite: 1, 4]</td>
+            </tr>
+            <tr>
+                <td><strong>S.S.L.C.</strong></td>
+                <td>General Curriculum</td>
+                <td>T.V.S. Matric Higher Secondary School, Madurai (Matric)</td>
+                <td>2008–09</td>
+                <td><strong>92.00%</strong>[cite: 1, 4]</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2 class="section-title">Executive Certifications & Continuous Learning</h2>
+    <ul class="bullet-list">
+        <li><strong>Applied AI: Advanced Deep Learning Techniques</strong> – Indian Institute of Science (IISc), Bengaluru</li>
+        <li><strong>Design and Analysis of Algorithms</strong> – Microsoft Research India[cite: 1, 4]</li>
+        <li><strong>Big Data Architecture Certification Suite</strong> – MapR (Apache Pig, Hive, Spark, HBase Schema Design & Data Models)[cite: 1, 4]</li>
+        <li><strong>Distributed Systems Engineering Track</strong> – Pluralsight (Apache Maven, Spring Fundamentals, Spark 2 Systems)[cite: 1, 4]</li>
+        <li><strong>Software Development Foundations</strong> – Certified Microsoft Student Partner (Network, Security, and Core Application Lifecycle Development)[cite: 1, 4]</li>
+    </ul>
+
+    <h2 class="section-title">Awards & Recognition</h2>
+    <ul class="bullet-list">
+        <li><strong>Star Performer of the Data Team</strong> – Visa Inc. (Awarded for outstanding architectural contributions and technical leadership)[cite: 1, 4]</li>
+        <li><strong>Corporate Hackathon Winner</strong> – Visa Inc. (Recognized for prototyping high-impact autonomous data solutions)[cite: 1, 4]</li>
+    </ul>
+</div>
+
+</body>
+</html>
